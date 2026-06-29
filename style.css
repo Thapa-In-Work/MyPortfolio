@@ -9,6 +9,11 @@ body {
     background: #08080d;
     color: #fff;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 100px 8%;
 }
 
 ::selection {
@@ -89,6 +94,14 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.side-menu .nav-link:hover {
+    color: #d7ff00;
+    background: rgba(215, 255, 0, 0.05);
+    padding-left: 16px;
 }
 
 
@@ -141,6 +154,7 @@ h1 span {
     color: #bdbdbd;
     font-size: 15px;
     line-height: 1.6;
+    margin-bottom: 25px;
 }
 
 .image-box {
@@ -185,14 +199,20 @@ h1 span {
     color: #d0d0d0;
     line-height: 1.6;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .info-grid {
     display: flex;
-    gap: 18px;
-    margin-bottom: 40px;
+    gap: 30px;
+    margin-bottom: 30px;
     color: #ddd;
+}
+
+.info-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .stats {
@@ -203,10 +223,18 @@ h1 span {
 
 .card {
     text-align: center;
-    padding: 30px;
+    padding: 30px 35px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 16px;
     background: #11111a;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.card:hover {
+    border-color: rgba(215, 255, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
@@ -226,14 +254,22 @@ h1 span {
 
 .btn {
     text-decoration: none;
-    padding: 16px;
+    padding: 16px 32px;
     font-weight: bold;
     border-radius: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.primary {
+.btn.primary {
     background: #d7ff00;
     color: black;
+}
+
+.btn.primary:hover {
+    background: #c5e600;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(215, 255, 0, 0.25);
 }
 
 
@@ -340,6 +376,19 @@ h1 span {
     text-align: left;
     display: flex;
     flex-direction: column;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.service-card.active {
+    border-color: rgba(215, 255, 0, 0.3);
 }
 
 .service-card a {
@@ -351,6 +400,11 @@ h1 span {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
     margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+    color: #d7ff00;
 }
 
 .icon {
@@ -425,6 +479,12 @@ h1 span {
     color: white;
     text-decoration: none;
     font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d7ff00;
+    padding-left: 4px;
 }
 
 .footer-right h3 {
@@ -504,17 +564,25 @@ h1 span {
 
 .contact-form input,
 .contact-form textarea {
-    width: 90%;
+    width: 100%;
     padding: 18px;
     background: #181818;
     color: white;
     font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d7ff00;
 }
 
 .contact-form textarea {
     height: 220px;
     margin-bottom: 25px;
-    width: 95%;
 }
 
 .contact-form button {
@@ -525,6 +593,13 @@ h1 span {
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #c5e600;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(215, 255, 0, 0.25);
 }
 
 .contact-info {
@@ -564,6 +639,14 @@ h1 span {
     text-decoration: none;
     color: white;
     border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.socials a:hover {
+    border-color: #d7ff00;
+    color: #d7ff00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(215, 255, 0, 0.15);
 }
 
 
@@ -601,6 +684,19 @@ h1 span {
     padding: 40px;
     text-align: left;
     position: relative;
+    transition: all 0.4s ease;
+    border-radius: 16px;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.featured:hover {
+    border-color: #d7ff00;
+    box-shadow: 0 20px 60px rgba(215, 255, 0, 0.12);
 }
 
 .price-card h5 {
@@ -643,23 +739,50 @@ h1 span {
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.price-btn:hover {
+    background: #c5e600;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(215, 255, 0, 0.25);
+}
+
+.price-btn.dark {
+    background: #000;
+    color: #fff;
+}
+
+.price-btn.dark:hover {
+    background: #1a1a1a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .featured {
+    background: #0f0f0f;
+    color: #fff;
+    border: 2px solid #d7ff00;
+    box-shadow: 0 0 30px rgba(215, 255, 0, 0.08);
+    transform: scale(1.03);
+    z-index: 1;
+}
+
+.featured h5 {
+    color: #d7ff00;
+}
+
+.featured h3 span {
+    color: #aaa;
+}
+
+.featured .price-btn.dark {
     background: #d7ff00;
     color: #000;
 }
 
-.featured h5,
-.featured h3,
-.featured p,
-.featured ul li {
-    color: #000;
-}
-
-.dark {
-    background: #000;
-    color: #fff;
+.featured .price-btn.dark:hover {
+    background: #c5e600;
+    box-shadow: 0 8px 25px rgba(215, 255, 0, 0.3);
 }
 
 
@@ -701,6 +824,14 @@ h1 span {
     border: 1px solid rgba(255, 255, 255, .08);
     overflow: hidden;
     text-align: left;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .blog-image {
@@ -776,9 +907,16 @@ h1 span {
 .project-card {
     background: #0f0f0f;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     text-align: left;
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .project-image img {
@@ -858,10 +996,17 @@ h1 span {
 .resume-card {
     background: #0f0f0f;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 30px;
     margin-bottom: 25px;
     position: relative;
+    transition: all 0.4s ease;
+}
+
+.resume-card:hover {
+    transform: translateX(6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .resume-date {
@@ -920,9 +1065,16 @@ h1 span {
 .testimonial-card {
     background: #0f0f0f;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 35px;
     text-align: left;
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(215, 255, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .testimonial-stars {
@@ -996,6 +1148,10 @@ h1 span {
 
 /* Large tablets & small desktops (up to 1024px) */
 @media (max-width: 1024px) {
+    section {
+        padding: 80px 5%;
+    }
+
     h1 {
         font-size: 70px;
     }
@@ -1026,12 +1182,15 @@ h1 span {
 
     .contact {
         padding: 80px 5%;
-        width: 90%;
     }
 }
 
 /* Tablets (up to 768px) */
 @media (max-width: 768px) {
+    section {
+        padding: 60px 5%;
+    }
+
     header {
         padding: 20px 25px;
     }
@@ -1120,7 +1279,6 @@ h1 span {
 
     .contact {
         padding: 60px 5%;
-        width: 90%;
     }
 
     .input-row {
@@ -1176,6 +1334,10 @@ h1 span {
 
     .project-image img {
         height: 200px;
+    }
+
+    .featured {
+        transform: scale(1.02);
     }
 }
 

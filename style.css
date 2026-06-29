@@ -732,3 +732,17 @@ h1 span {
     font-weight: 600;
     font-size: 14px;
 }
+
+.footer-marquee {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    opacity: 0.05;
+}
+.footer-marquee h2 {
+    color: #fff;
+    font-size: 140px;
+    font-weight: 700;
+    animation: scroll-left 15s scroll infinite;
+}
